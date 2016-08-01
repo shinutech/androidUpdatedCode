@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <net.rtccloud.helper.view.FloatLabelLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+            <EditText
+                android:id="@+id/mp_title"
+                style="@style/Form.EditText"
+                android:hint="@string/prompt_mp_title" />
+        </net.rtccloud.helper.view.FloatLabelLayout>
+
+        <net.rtccloud.helper.view.FloatLabelLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+            <EditText
+                android:id="@+id/mp_location"
+                style="@style/Form.EditText"
+                android:hint="@string/prompt_mp_location" />
+        </net.rtccloud.helper.view.FloatLabelLayout>
+
+        <Switch
+            android:id="@+id/mp_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="16dp"
+            android:textOff="@string/prompt_mp_type_permanent"
+            android:textOn="@string/prompt_mp_type_scheduled" />
+
+        <net.rtccloud.helper.view.FloatLabelLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+            <EditText
+                android:id="@+id/mp_start_time"
+                style="@style/Form.EditText"
+                android:hint="@string/prompt_mp_start_time"
+                android:inputType="number" />
+        </net.rtccloud.helper.view.FloatLabelLayout>
+
+        <net.rtccloud.helper.view.FloatLabelLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+            <EditText
+                android:id="@+id/mp_end_time"
+                style="@style/Form.EditText"
+                android:hint="@string/prompt_mp_end_time"
+                android:inputType="number" />
+        </net.rtccloud.helper.view.FloatLabelLayout>
+    </LinearLayout>
+
+</ScrollView>

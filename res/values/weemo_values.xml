@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="weemo_fragment_layout" type="id"/>
+
+    <item name="frame_parent" type="id"/>
+    <item name="frame_container" type="id"/>
+    <item name="frame_in" type="id"/>
+    <item name="frame_out" type="id"/>
+    
+</resources>

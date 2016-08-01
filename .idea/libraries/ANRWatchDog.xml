@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ANRWatchDog">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/ANRWatchDog.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

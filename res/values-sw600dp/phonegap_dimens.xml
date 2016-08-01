@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="video_frame_width">320dp</dimen>
+    <dimen name="video_frame_height">240dp</dimen>
+</resources>

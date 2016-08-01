@@ -1,0 +1,48 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ImageButton
+        android:id="@+id/call_control_patient_info"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_patient_info" />
+    <ImageButton
+        android:id="@+id/call_control_camera"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_camera" />
+
+    <ImageButton
+        android:id="@+id/call_control_video"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_video" />
+
+    <ImageButton
+        android:id="@+id/call_control_speakers"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_speakers" />
+
+    <ImageButton
+        android:id="@+id/call_control_micro"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_micro" />
+
+    <ImageButton
+        android:id="@+id/call_control_fullscreen"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_fullscreen" />
+
+    <ImageButton
+        android:id="@+id/call_control_scale_type"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_scale_mode" />
+
+    <ImageButton
+        android:id="@+id/call_control_share"
+        style="@style/CallControls.Button"
+        android:contentDescription="@string/call_control_share" />
+
+    <ImageButton
+        android:id="@+id/call_control_hangup"
+        style="@style/CallControls.Button"
+        android:background="@drawable/selectable_bg_red_transparent"
+        android:contentDescription="@string/call_control_hangup" />
+
+</merge>

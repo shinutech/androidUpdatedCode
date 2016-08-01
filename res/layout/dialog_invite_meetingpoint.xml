@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="16dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <net.rtccloud.helper.view.FloatLabelLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:floatLabelTextAppearance="@style/TextAppearance.FloatLabel" >
+
+        <EditText
+            android:id="@+id/mp_broadcast"
+            style="@style/Form.EditText"
+            android:hint="@string/prompt_mp_invite" />
+    </net.rtccloud.helper.view.FloatLabelLayout>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:weemo_cv="http://schemas.android.com/apk/lib/com.weemo.phonegap"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CallActivity" >
+
+    <FrameLayout
+        android:id="@+id/videoframe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_holo_dark" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+          <net.rtccloud.sdk.view.VideoInFrame
+              android:id="@+id/video_in_master"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center" />
+
+        <net.rtccloud.sdk.view.VideoOutPreviewFrame
+            android:id="@+id/video_out"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/video_out_margin" />       
+             </FrameLayout>
+
+        
+    </FrameLayout>
+
+</RelativeLayout>

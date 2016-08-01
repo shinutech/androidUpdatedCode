@@ -1,0 +1,106 @@
+<div id="readMonitor">
+    <synsormed-header title="Monitor" back-button="false" logged-in="true"></synsormed-header>
+    <section>
+        <div class="panel panel-default" ng-if="showSyncBar()">
+            <div class="panel-body text-center">
+                 <h2>Healthkit</h2>
+                 <div ng-if="!syncing">
+                     <button type="button" class="btn btn-success" ng-click="syncHealthKitData(false, false, true)">Sync</button>
+                 </div>
+                 <div ng-if="syncing">
+                     <div><img src="img/syncing.gif"  class="sync-img"/></div>
+                     <div>Syncing</div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <h2>
+                    <a href="javascript:void(0)" ng-click="goToDocumentsPage()">
+                        <u> {{documents.length}} Unread Documents </u>
+                    </a>
+                </h2>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body text-center">
+                <h2>Indicators</h2>
+                <accordion close-others="true" >
+                    <accordion-group ng-repeat='measurement in measurements' class="col-sm-12 alert alert-info indicator-list" ng-if="measurements.length">
+                        <accordion-heading class="text-center">
+                            <div class="text-center">
+                                <a class="col-sm-2 list-text">{{measurement.display_name || measurement.name}}</a>
+                            </div>
+                    </accordion-heading>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Connected</td>
+                            <td>
+                                <span ng-if='measurement.serviceName && measurement.oauthAvailable'><a>{{measurement.serviceName}}<a>  <i class="text-success fa-lg fa fa-check-circle"></i></span>
+                                <span ng-if='!(measurement.serviceName && measurement.oauthAvailable)'><i class="danger-text fa-lg fa fa-times-circle-o"></i></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Next Reading</td>
+                            <td>{{measurement.next_reading | date:'mediumDate'}}</td>
+                        </tr>
+                        <tr>
+                            <td>Goal</td>
+                            <td>{{measurement.lowerbound}} {{measurement.unit || ''}} to {{measurement.upperbound}} {{measurement.unit || ''}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><button class="btn btn-secondary btn-sm icon-color" ng-click="servicesList(measurement)" ><i class="fa fa-cloud-upload"></i></button></td>
+                        </tr>
+                    </table>
+                </accordion-group>
+            </accordion>
+            <small>(Reconnect/disconnect service from Menu -> SynsorMed Connect)</small>
+        </div>
+    </div>
+
+    <div class="panel panel-default text-center">
+        <div class="panel-body">
+            <h2>Status</h2>
+            <table class="table table-bordered">
+                <tr>
+                    <td width='100%'>
+                        <i ng-if='oauthAvailable' class="text-success fa-4x fa fa-check-circle"></i>
+                        <i ng-if='!oauthAvailable' class="warning-text fa-4x fa fa fa-times-circle"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <small>(Connect all indicators to change status)</small>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2>Organization Details</h2>
+            <table class="table table-bordered">
+                <tr>
+                    <td>Provider</td>
+                    <td>{{monitor.providerName}}</td>
+                </tr>
+                <tr>
+                    <td>Organization</td>
+                    <td>{{monitor.practiceName}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class='font-large middle pull-left'>Enable Auto Fetch&nbsp;&nbsp;(<a ng-click='helpModal()'>?</a>)</div>
+                    <div class="pull-right">
+                        <input type="checkbox" check='monitor.autoFetch' slider>
+                    </div>
+                    <div class='clear'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>

@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.rtccloud.helper.fragment.CallFragment" >
+
+    <LinearLayout
+        android:id="@+id/share_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <WebView
+            android:id="@+id/share_webview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/share_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:padding="4dp" />
+    </LinearLayout>
+
+    <net.rtccloud.sdk.view.ScreenShareInFrame
+        android:id="@+id/screen_share_in"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/video_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:visibility="invisible" >
+
+        <com.weemo.phonegap.RTCGLVideoView
+            android:id="@+id/video_in_master"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <com.weemo.phonegap.RTCGLVideoView
+        	xmlns:android="http://schemas.android.com/apk/res/android"
+   	 		xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/video_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/video_out_margin" />
+
+        <net.rtccloud.helper.view.CallControls
+            android:id="@+id/call_control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:animateLayoutChanges="true"
+            android:background="#9000"
+            android:minHeight="50dp"
+            android:visibility="gone" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top|right"
+            android:src="@drawable/encryption"
+            android:id="@+id/encryptionIcon"
+            android:contentDescription="encryption icon"
+            />
+    </FrameLayout>
+
+</FrameLayout>

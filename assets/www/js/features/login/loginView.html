@@ -1,0 +1,24 @@
+<div id="login">
+    <synsormed-header show-menu="false"></synsormed-header>
+    <section>
+        <h1>Welcome</h1>
+        <h4>Please log in</h4>
+
+        <div id="login-options">
+            <button ng-click="showLogin('patient')"><i></i><span>I'm a Patient</span></button>
+            <button ng-click="showLogin('provider')"><i></i><span>I'm a Provider</span></button>
+        </div>
+
+        <div id="how-it-works">
+            <a ng-click="showTutorial()">How it works</a>
+        </div>
+        <div id="about">
+            <a ng-click="showAbout()">About</a>
+        </div>
+
+        <div id="copyright">
+            <div><strong>Synsor</strong><span>Med</span></div>
+            <div>&copy;{{year}}</div>
+        </div>
+    </section>
+</div>

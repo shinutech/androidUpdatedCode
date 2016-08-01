@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="crash_email_subject">%1$s Android %2$s %3$s %4$s</string>
+    <string name="crash_email_body">"Please provide details about the issue (what happened and how it happened) to assist our team resolve your issue:\n"</string>
+    
+    <!-- Form prompt -->
+    <string name="prompt_user_id">User ID</string>
+    <string name="prompt_contact_id">Contact ID</string>
+    <string name="prompt_display_name">Display Name</string>
+    <string name="prompt_mp_title">Title</string>
+    <string name="prompt_mp_location">Location</string>
+    <string name="prompt_mp_type_permanent">Permanent</string>
+    <string name="prompt_mp_type_scheduled">Scheduled</string>
+    <string name="prompt_mp_start_time">Start time</string>
+    <string name="prompt_mp_end_time">End time</string>
+    <string name="prompt_mp_invite">Contact ID</string>
+    <string name="prompt_accept">Accept</string>
+    <string name="prompt_deny">Deny</string>
+    
+    <!-- Form actions -->
+    <string name="action_log_in"><b>Log in</b></string>
+    <string name="action_cancel"><b>Cancel</b></string>
+    <string name="action_message">Message</string>
+    <string name="action_check">Check</string>
+    <string name="action_call_video"><b>Video Call</b></string>
+    <string name="action_call_audio"><b>Audio Call</b></string>
+    <string name="action_create_mp">Create a meeting point</string>
+    <string name="action_join_mp">Join meeting point</string>
+    <string name="action_broadcast_mp">Broadcast</string>
+    <string name="action_host_mp">Host</string>
+    <string name="action_delete_mp">Delete</string>
+    <string name="action_report">Send report</string>
+    
+    <!-- Messages in subtitle -->
+    <string name="msg_initializing">Initializing…</string>
+    <string name="msg_authentication">Authentication…</string>
+    <string name="msg_authentication_cancelled">Authentication cancelled</string>
+    <string name="msg_authenticated">Authenticated</string>
+    <string name="msg_message_success">Message successfully sent to &lt;b>%1$s&lt;/b></string>
+    <string name="msg_message_fail">Fail sending message to &lt;b>%1$s&lt;/b></string>
+    <string name="msg_check">Checking &lt;b>%1$s&lt;/b> status…</string>
+    <string name="msg_call">Calling &lt;b>%1$s&lt;/b>…</string>
+    <string name="msg_attendee">Joining &lt;b>%1$s&lt;/b> as attendee…</string>
+    <string name="msg_host">Joining &lt;b>%1$s&lt;/b> as host…</string>
+    <string name="msg_reachable">&lt;b>%1$s&lt;/b> is reachable</string>
+    <string name="msg_unreachable">&lt;b>%1$s&lt;/b> is unreachable</string>
+    <string name="msg_call_ended">Call ended: &lt;b>%1$s&lt;/b></string>
+    <string name="msg_call_paused">Call paused</string>
+    <string name="msg_call_created">Call created</string>
+    <string name="msg_call_proceeding">Call proceeding</string>
+    <string name="msg_call_ringing">Call ringing</string>
+    <string name="msg_call_active">Call active</string>
+    <string name="msg_calling_in">&lt;b>%1$s&lt;/b> is calling you…</string>
+    <string name="msg_calling_in_text">is calling you…</string>
+    <string name="msg_calling_reject">Reject</string>
+    <string name="msg_calling_accept_video">Video</string>
+    <string name="msg_calling_accept_audio">Audio</string>
+    <string name="msg_calling_out">Calling &lt;b>%1$s&lt;/b>…</string>
+    <string name="msg_calling_hang_up">Hang up</string>
+    <string name="msg_reconnecting">Reconnecting…</string>
+    <string name="msg_reconnecting_cancel">Cancel</string>
+    <string name="msg_mp_creating">Creating meeting point…</string>
+    <string name="msg_mp_created">Meeting point created</string>
+    <string name="msg_mp_deleting">Deleting meeting point…</string>
+    <string name="msg_mp_deleted">Meeting point deleted</string>
+    <string name="msg_mp_hosting">Hosting meeting point…</string>
+    <string name="msg_mp_hosted">Meeting point hosted</string>
+    <string name="msg_mp_accepted">Request accepted</string>
+    <string name="msg_mp_denied">Request denied</string>
+    <string name="msg_mp_joining">Joining meeting point…</string>
+    <string name="msg_mp_acquired">Meeting point acquired</string>
+    <string name="msg_mp_cleared">Meeting point cleared</string>
+    <string name="msg_mp_pending">Pending request…</string>
+    <string name="msg_mp_request">%1$s request to join</string>
+    
+    <!-- Notification -->
+    <string name="notif_ringing">&lt;b>%1$s&lt;/b> is calling you…</string>
+    <string name="notif_ringing_accept_video">Video</string>
+    <string name="notif_ringing_accept_audio">Audio</string>
+    <string name="notif_ringing_reject">Reject</string>
+    <string name="notif_ongoing_call">&lt;b>%1$s&lt;/b></string>
+    <string name="notif_ongoing_call_tap">Tap to resume the call</string>
+    <string name="notif_ongoing_conference_tap">Tap to resume the conference</string>
+    <string name="notif_call_hangup">Hang up</string>
+    
+    <!-- Call Controls -->
+    <string name="call_control_speakers">Switch earphones</string>
+    <string name="call_control_micro">(Un)mute microphone</string>
+    <string name="call_control_video">Toggle camera</string>
+    <string name="call_control_camera">Switch camera</string>
+    <string name="call_control_patient_info">patient Info</string>
+    <string name="call_control_fullscreen">Fullscreen</string>
+    <string name="call_control_scale_mode">Scale mode</string>
+    <string name="call_control_share">Share</string>
+    <string name="call_control_hangup">Hang up</string>
+    
+    <!-- Conf Controls -->
+    <string name="conf_control_mute">Mute/Unmute</string>
+    <string name="conf_control_deafen">Deafen/Undeafen</string>
+    <string name="conf_control_kick">Kick</string>
+    <string name="conf_control_mute_all">Mute All</string>
+    <string name="conf_control_deafen_all">Deafen All</string>
+    <string name="conf_control_unmute_all">Unmute All</string>
+    <string name="conf_control_undeafen_all">Undeafen All</string>
+
+
+    <string name="weemo_switch_earphones">Switch earphones</string>
+
+    <string name="weemo_un_mute_microphone">(Un)mute microphone</string>
+
+    <string name="weemo_toggle_video">Toggle video</string>
+
+    <string name="weemo_switch_camera">Switch camera</string>
+
+    <string name="weemo_hang_up">Hang up</string>
+
+</resources>

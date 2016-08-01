@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:weemo_cv="http://schemas.android.com/apk/lib/com.weemo.phonegap"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CallActivity" >
+
+    <FrameLayout
+        android:id="@+id/videoframe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_holo_dark" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.weemo.sdk.view.WeemoVideoInFrame
+                android:id="@+id/video_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.weemo.sdk.view.WeemoVideoOutPreviewFrame
+                android:id="@+id/video_out"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom|left"
+                android:layout_margin="@dimen/weemo_video_out_margin" />
+        </FrameLayout>
+
+        <com.weemo.phonegap.CallControl
+            android:id="@+id/call_control"
+            weemo_cv:style="dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:background="@color/weemo_call_control_bg"
+            android:minWidth="400dp"
+            android:maxWidth="700dp"
+            android:paddingTop="@dimen/weemo_callcontrols_paddingTop" />
+    </FrameLayout>
+
+</RelativeLayout>

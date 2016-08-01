@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FloatLabelLayout">
+        <attr name="floatLabelTextAppearance" format="reference" />
+        <attr name="floatLabelSidePadding" format="reference|dimension" />
+    </declare-styleable>
+    
+    <declare-styleable name="CallControls">
+        <attr name="btn_color" format="color" />
+    </declare-styleable>
+        <declare-styleable name="RTCGlView">
+        <attr name="mainMirror" format="boolean" />
+        <attr name="secondMirror" format="boolean" />
+        <attr name="mainCoords" format="reference" />
+        <attr name="secondCoords" format="reference"/>
+    </declare-styleable>
+
+</resources>

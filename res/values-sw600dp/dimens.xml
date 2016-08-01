@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <dimen name="video_out_size_fullscreen">180dp</dimen>
+    <dimen name="video_out_size">50dp</dimen>
+    
+    <dimen name="video_thumbnail_size_fullscreen">120dp</dimen>
+    <dimen name="video_thumbnail_size">50dp</dimen>
+    
+    <dimen name="video_out_margin">20dp</dimen>
+    <dimen name="video_in_small_size_height">170dp</dimen>
+    <dimen name="video_in_small_size_width">300dp</dimen>
+    
+    <dimen name="navigation_drawer_width">320dp</dimen>
+    
+</resources>
