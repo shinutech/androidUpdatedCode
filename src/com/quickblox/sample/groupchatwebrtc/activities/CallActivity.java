@@ -700,7 +700,7 @@ public class CallActivity extends BaseLogginedUserActivity implements QBRTCClien
             ArrayList<QBUser> opponents = new ArrayList<QBUser>();
             opponents.add(myOpponent);
             //SettingsUtil.setSettingsStrategy(opponents, getDefaultSharedPrefs(), this);
-            QBRTCMediaConfig.setVideoFps(20);
+            QBRTCMediaConfig.setVideoFps(40);
             QBRTCMediaConfig.setVideoStartBitrate(2000);
             QBRTCMediaConfig.setVideoHWAcceleration(true);
             ConversationFragment fragment = ConversationFragment.newInstance(opponents,

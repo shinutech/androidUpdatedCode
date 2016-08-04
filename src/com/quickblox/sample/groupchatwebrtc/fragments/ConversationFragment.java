@@ -18,7 +18,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.GestureDetector;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -30,11 +32,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.synsormed.mobile.R;
 import com.quickblox.sample.groupchatwebrtc.activities.CallActivity;
-import com.quickblox.sample.groupchatwebrtc.activities.ListUsersActivity;
 import com.quickblox.sample.groupchatwebrtc.adapters.OpponentsFromCallAdapter;
-import com.quickblox.sample.groupchatwebrtc.holder.DataHolder;
 import com.quickblox.sample.groupchatwebrtc.utils.CameraUtils;
 import com.quickblox.sample.groupchatwebrtc.utils.Consts;
 import com.quickblox.sample.groupchatwebrtc.view.RTCGLVideoView;
@@ -49,7 +48,7 @@ import com.quickblox.videochat.webrtc.callbacks.QBRTCStatsReportCallback;
 import com.quickblox.videochat.webrtc.exception.QBRTCException;
 import com.quickblox.videochat.webrtc.stats.QBRTCStatsReport;
 import com.quickblox.videochat.webrtc.view.QBRTCVideoTrack;
-
+import com.synsormed.mobile.R;
 import com.weemo.phonegap.RtccAndroidPhonegap;
 
 import org.webrtc.VideoRenderer;
@@ -109,6 +108,26 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
     private RtccAndroidPhonegap myPlugin;
     private Chronometer timer;
 
+
+    final GestureDetector gesture = new GestureDetector(getActivity(),
+            new GestureDetector.SimpleOnGestureListener() {
+
+                @Override
+                public boolean onDown(MotionEvent e) {
+
+                    setBottomBarVisibility();
+                    return true;
+                }
+
+                @Override
+                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                                       float velocityY) {
+
+                    return super.onFling(e1, e2, velocityX, velocityY);
+                }
+            });
+
+
     public static ConversationFragment newInstance(List<QBUser> opponents, String callerName,
                                                    QBRTCTypes.QBConferenceType qbConferenceType,
                                                    Map<String, String> userInfo, CallActivity.StartConversetionReason reason,
@@ -132,28 +151,28 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
         return fragment;
     }
 
-   /* public static ConversationFragment newInstance(String sesionnId) {
+    /* public static ConversationFragment newInstance(String sesionnId) {
 
-        ConversationFragment fragment = new ConversationFragment();
-        Bundle bundle = new Bundle();
-        //bundle.putInt(Consts.CONFERENCE_TYPE, qbConferenceType.getValue());
-        bundle.putInt(Consts.CONFERENCE_TYPE, QBRTCTypes.QBConferenceType.QB_CONFERENCE_TYPE_VIDEO);
-        //bundle.putString(CALLER_NAME, callerName);
-        bundle.putString(CALLER_NAME, "AminTestCallerName");
-        bundle.putSerializable(Consts.OPPONENTS, (Serializable) opponents);
-        if (userInfo != null) {
-            for (String key : userInfo.keySet()) {
-                bundle.putString("UserInfo:" + key, userInfo.get(key));
-            }
-        }
-        bundle.putInt(START_CONVERSATION_REASON, reason.ordinal());
-        if (sesionnId != null) {
-            bundle.putString(SESSION_ID, sesionnId);
-        }
-        fragment.setArguments(bundle);
-        return fragment;
-    }
-**/
+         ConversationFragment fragment = new ConversationFragment();
+         Bundle bundle = new Bundle();
+         //bundle.putInt(Consts.CONFERENCE_TYPE, qbConferenceType.getValue());
+         bundle.putInt(Consts.CONFERENCE_TYPE, QBRTCTypes.QBConferenceType.QB_CONFERENCE_TYPE_VIDEO);
+         //bundle.putString(CALLER_NAME, callerName);
+         bundle.putString(CALLER_NAME, "AminTestCallerName");
+         bundle.putSerializable(Consts.OPPONENTS, (Serializable) opponents);
+         if (userInfo != null) {
+             for (String key : userInfo.keySet()) {
+                 bundle.putString("UserInfo:" + key, userInfo.get(key));
+             }
+         }
+         bundle.putInt(START_CONVERSATION_REASON, reason.ordinal());
+         if (sesionnId != null) {
+             bundle.putString(SESSION_ID, sesionnId);
+         }
+         fragment.setArguments(bundle);
+         return fragment;
+     }
+ **/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_conversation, container, false);
@@ -181,6 +200,10 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
         setUpUiByCallType(qbConferenceType);
 
         mainHandler = new FragmentLifeCycleHandler();
+
+
+
+
         return view;
 
     }
@@ -197,6 +220,20 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
             }
 
         }
+    }
+
+
+    private void setBottomBarVisibility()
+    {
+        if (actionVideoButtonsLayout.getVisibility() == View.VISIBLE)
+        {
+            actionVideoButtonsLayout.setVisibility(View.GONE);
+        }
+        else
+        {
+            actionVideoButtonsLayout.setVisibility(View.VISIBLE);
+        }
+
     }
 
     public void actionButtonsEnabled(boolean enability) {
@@ -302,7 +339,17 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
         incUserName.setBackgroundResource(ListUsersActivity.selectBackgrounForOpponent((
                 DataHolder.getUserIndexByFullName(callerName)) + 1));*/
 
+        setBottomBarVisibility();
         actionButtonsEnabled(false);
+
+        recyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+
+                return gesture.onTouchEvent(event);
+            }
+        });
 
         timer = (Chronometer) view.findViewById(R.id.timer);
     }
@@ -764,5 +811,4 @@ public class ConversationFragment extends Fragment implements Serializable, QBRT
 
     }
 }
-
 
